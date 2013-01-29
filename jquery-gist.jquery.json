@@ -1,0 +1,17 @@
+{
+    "name"        : "jquery-gist",
+    "title"       : "jquery-gist",
+    "version"     : "0.1",
+    "author"      : {
+        "name" : "dchusovitin",
+        "email": "dchusovitin@gmail.com",
+        "url"  : "http://chusovitin.com/"
+    },
+    "dependencies": {
+        "jquery"  : ">= 1.5"
+    },
+    "description" : "Embedding GitHub Gist into web-page",
+    "keywords"    : [
+        "github", "gist"
+    ]
+}
