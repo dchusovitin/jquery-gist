@@ -1,12 +1,18 @@
 {
     "name"        : "jquery-gist",
     "title"       : "jquery-gist",
-    "version"     : "0.1",
+    "version"     : "0.0.1",
     "author"      : {
         "name" : "dchusovitin",
         "email": "dchusovitin@gmail.com",
         "url"  : "http://chusovitin.com/"
     },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://raw.github.com/dchusovitin/jquery-gist/master/LICENSE"
+        }
+    ],
     "dependencies": {
         "jquery"  : ">= 1.5"
     },
