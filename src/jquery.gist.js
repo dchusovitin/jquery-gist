@@ -2,17 +2,19 @@
 
     "use strict";
 
-    var defaults = {
-        timeout     : 5000,
-        onLoadError : $.noop,
-        onBeforeLoad: $.noop
-    };
+    var GIST_URL = "https://gist.github.com",
+        GIST_REGEXP = /^https?:\/\/gist\.github\.com(?:\/[^/]+)*\/([0-9]+)\/?$/,
+        $stylesheetContainer = $("head"),
+        stylesheetLoaded = false,
+        defaults = {
+            timeout     : 5000,
+            onLoadError : $.noop,
+            onBeforeLoad: $.noop
+        };
 
     function Gist(container, options) {
-        var GIST_REGEXP          = /^https?:\/\/gist\.github\.com\/([0-9]+)\/?$/,
-            $container           = $(container),
-            $stylesheetContainer = $("head"),
-            gistId               = $container.data('gist'),
+        var $container           = $(container),
+            gistId               = $container.data("gist"),
             matches;
 
         if (
@@ -39,9 +41,11 @@
             beforeSend: $.proxy(options.onBeforeLoad, $container)
         })
         .done(function(response) {
-            if (response.stylesheet) {
+            if (response.stylesheet && !stylesheetLoaded) {
+                stylesheetLoaded = true;
+
                 $stylesheetContainer.append(
-                    "<link rel='stylesheet' href='" + response.stylesheet + "' type='text/css' />"
+                    "<link rel='stylesheet' href='" + GIST_URL + response.stylesheet + "' type='text/css' />"
                 );
             }
 
