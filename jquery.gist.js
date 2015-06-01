@@ -3,7 +3,7 @@
     "use strict";
 
     var GIST_URL = "https://gist.github.com",
-        GIST_REGEXP = /^https?:\/\/gist\.github\.com(?:\/[^/]+)*\/([0-9]+)\/?$/,
+        GIST_REGEXP = /^https?:\/\/gist\.github\.com(?:\/[^/]+)*\/([0-9a-z]+)\/?$/,
         $stylesheetContainer = $("head"),
         stylesheetLoaded = false,
         defaults = {
@@ -43,9 +43,9 @@
         .done(function(response) {
             if (response.stylesheet && !stylesheetLoaded) {
                 stylesheetLoaded = true;
-
+                
                 $stylesheetContainer.append(
-                    "<link rel='stylesheet' href='" + GIST_URL + response.stylesheet + "' type='text/css' />"
+                    "<link rel='stylesheet' href='" + response.stylesheet + "' type='text/css' />"
                 );
             }
 
