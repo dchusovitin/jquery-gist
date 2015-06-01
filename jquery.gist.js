@@ -4,6 +4,7 @@
 
     var GIST_URL = "https://gist.github.com",
         GIST_REGEXP = /^https?:\/\/gist\.github\.com(?:\/[^/]+)*\/([0-9a-z]+)\/?$/,
+        
         $stylesheetContainer = $("head"),
         stylesheetLoaded = false,
         defaults = {
