@@ -1,7 +1,6 @@
 {
     "name"        : "jquery-gist",
-    "title"       : "jquery-gist",
-    "version"     : "0.0.4",
+    "version"     : "0.0.5",
     "author"      : {
         "name" : "dchusovitin",
         "email": "dchusovitin@gmail.com",
@@ -18,6 +17,6 @@
     },
     "description" : "Embedding GitHub Gist into web-page",
     "keywords"    : [
-        "github", "gist"
+        "jquery-plugin", "ecosystem:jquery", "github", "gist"
     ]
 }
